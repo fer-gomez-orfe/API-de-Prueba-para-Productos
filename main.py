@@ -1,5 +1,5 @@
 from typing import Union
-from routers import products
+from routers import products, auth_users
 
 from fastapi import FastAPI
 
@@ -7,6 +7,7 @@ app = FastAPI()
 
 #Routers
 app.include_router(products.router)
+app.include_router(auth_users.router)
 
 @app.get("/")
 def read_root():
