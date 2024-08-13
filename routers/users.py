@@ -29,7 +29,7 @@ async def new_user(user: User):
     #    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="El usuario ya existe")
 
     if (db_client.users.find_one({"email":user.email})):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="El usuario ya existe")
+        raise HTTPException(status_code=status.HTTP_226_IM_USED, detail="El usuario ya existe")
     
     user_dict = dict(user)
     del user_dict["id"]

@@ -11,7 +11,7 @@ async def products():
 
 #POST
 @router.post("/", response_model=Product, status_code=status.HTTP_201_CREATED)
-async def user(product: Product):
+async def new_product(product: Product):
 
     product_dict = dict(product)
     #Eliminamos el id para que MONGO asigne uno por defecto
